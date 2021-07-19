@@ -6,12 +6,14 @@ import { ConfirmButtonTransitionState } from "@saleor/components/ConfirmButton";
 import Container from "@saleor/components/Container";
 import Form from "@saleor/components/Form";
 import Grid from "@saleor/components/Grid";
+import Metadata from "@saleor/components/Metadata";
 import PageHeader from "@saleor/components/PageHeader";
 import SaveButtonBar from "@saleor/components/SaveButtonBar";
 import { createSaleChannelsChangeHandler } from "@saleor/discounts/handlers";
 import { DiscountErrorFragment } from "@saleor/fragments/types/DiscountErrorFragment";
 import { sectionNames } from "@saleor/intl";
 import { validatePrice } from "@saleor/products/utils/validation";
+import useMetadataChangeTrigger from "@saleor/utils/metadata/useMetadataChangeTrigger";
 import React from "react";
 import { useIntl } from "react-intl";
 
@@ -60,6 +62,11 @@ const SaleCreatePage: React.FC<SaleCreatePageProps> = ({
   onBack
 }) => {
   const intl = useIntl();
+  const {
+    isMetadataModified,
+    isPrivateMetadataModified,
+    makeChangeHandler: makeMetadataChangeHandler
+  } = useMetadataChangeTrigger();
 
   const initialForm: FormData = {
     channelListings,
@@ -83,6 +90,8 @@ const SaleCreatePage: React.FC<SaleCreatePageProps> = ({
         const formDisabled = data.channelListings?.some(channel =>
           validatePrice(channel?.discountValue)
         );
+        const changeMetadata = makeMetadataChangeHandler(change);
+        console.log(data);
         return (
           <Container>
             <AppHeader onBack={onBack}>
