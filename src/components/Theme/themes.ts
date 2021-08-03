@@ -40,7 +40,8 @@ export const dark: IThemeColors = {
     default: "#FFFFFF"
   },
   divider: "#252728",
-  error: "#C22D74",
+  // error: "#C22D74",
+  error: "#BA5253",
   font: {
     button: "#202124",
     default: "#FCFCFC",
@@ -63,8 +64,10 @@ export const dark: IThemeColors = {
     textHover: "#616161"
   },
   paperBorder: "#252728",
-  primary: "#13BEBB",
-  secondary: "#21125E",
+//  primary: "#13BEBB",
+//  secondary: "#21125E",
+  primary: "#FFA200",
+  secondary: "#22AF47",
   theme: "dark"
 };
 export const light: IThemeColors = {
@@ -77,7 +80,8 @@ export const light: IThemeColors = {
     default: "#616161"
   },
   divider: "#EAEAEA",
-  error: "#C22D74",
+//  error: "#C22D74",
+  error: "#E95F62",
   font: {
     button: "#FFFFFF",
     default: "#3D3D3D",
@@ -100,7 +104,9 @@ export const light: IThemeColors = {
     textHover: "#616161"
   },
   paperBorder: "#EAEAEA",
-  primary: "#06847B",
-  secondary: "#21125E",
+//  primary: "#06847B",
+//  secondary: "#21125E",
+  primary: "#E9791E",
+  secondary: "#22AF47",
   theme: "light"
 };
