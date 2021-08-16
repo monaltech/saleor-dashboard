@@ -178,7 +178,8 @@ export const ProductVariant: React.FC<ProductUpdateProps> = ({
         sku: data.sku,
         stocks: data.updateStocks.map(mapFormsetStockToStockInput),
         trackInventory: data.trackInventory,
-        weight: weight(data.weight)
+        weight: weight(data.weight),
+	wholeSalePrice: decimal(data.wholeSalePrice)
       }
     });
 

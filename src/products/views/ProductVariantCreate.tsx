@@ -102,7 +102,8 @@ export const ProductVariant: React.FC<ProductVariantCreateProps> = ({
             warehouse: stock.id
           })),
           trackInventory: true,
-          weight: weight(formData.weight)
+          weight: weight(formData.weight),
+	  wholeSalePrice: decimal(formData.wholeSalePrice)
         }
       }
     });

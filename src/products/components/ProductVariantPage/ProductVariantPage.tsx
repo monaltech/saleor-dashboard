@@ -34,6 +34,7 @@ export interface ProductVariantPageFormData extends MetadataFormData {
   sku: string;
   trackInventory: boolean;
   weight: string;
+  wholeSalePrice: string;
 }
 
 export interface ProductVariantPageSubmitData

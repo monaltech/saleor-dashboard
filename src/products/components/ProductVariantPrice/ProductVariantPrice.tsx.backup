@@ -22,7 +22,7 @@ const useStyles = makeStyles(
 
 interface ProductVariantPriceProps {
   currencySymbol?: string;
-  data: Record<"price" | "costPrice" | "wholeSalePrice",  string>;
+  data: Record<"price" | "costPrice", string>;
   errors: ProductErrorFragment[];
   loading?: boolean;
   onChange(event: any);
@@ -34,7 +34,7 @@ const ProductVariantPrice: React.FC<ProductVariantPriceProps> = props => {
   const classes = useStyles(props);
   const intl = useIntl();
 
-  const formErrors = getFormErrors(["price", "costPrice", "wholeSalePrice"], errors);
+  const formErrors = getFormErrors(["price", "costPrice"], errors);
 
   const handlePriceChange = createNonNegativeValueChangeHandler(onChange);
 
@@ -92,21 +92,21 @@ const ProductVariantPrice: React.FC<ProductVariantPriceProps> = props => {
                 }
               }}
             />
-            <PriceField
-              error={!!formErrors.wholeSalePrice}
-              name="wholeSalePrice"
+	  <PriceField
+              error={!!formErrors.costPrice}
+              name="costPrice"
               label={intl.formatMessage({
-                defaultMessage: "WholeSale price"
+                defaultMessage: "Cost price"
               })}
               hint={
-                getProductErrorMessage(formErrors.wholeSalePrice, intl) ||
+                getProductErrorMessage(formErrors.costPrice, intl) ||
                 intl.formatMessage({
                   defaultMessage: "Optional",
                   description: "optional field",
-                  id: "productVariantPriceOptionalWholeSalePriceField"
+                  id: "productVariantPriceOptionalCostPriceField"
                 })
               }
-              value={data.wholeSalePrice}
+              value={data.costPrice}
               currencySymbol={currencySymbol}
               onChange={handlePriceChange}
               disabled={loading}
@@ -124,4 +124,3 @@ const ProductVariantPrice: React.FC<ProductVariantPriceProps> = props => {
 };
 ProductVariantPrice.displayName = "ProductVariantPrice";
 export default ProductVariantPrice;
-

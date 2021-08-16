@@ -1,7 +1,5 @@
-// import saleorDarkLogoSmall from "@assets/images/logo-dark-small.svg";
-// import saleorDarkLogo from "@assets/images/logo-dark.svg";
-import saleorDarkLogoSmall from "@assets/images/logo-dark-small.png";
-import saleorDarkLogo from "@assets/images/logo-dark.png";
+import saleorDarkLogoSmall from "@assets/images/logo-dark-small.svg";
+import saleorDarkLogo from "@assets/images/logo-dark.svg";
 import menuArrowIcon from "@assets/images/menu-arrow-icon.svg";
 import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
@@ -149,8 +147,7 @@ const useStyles = makeStyles(
         top: "50%",
         transform: "translate(-50%,-50%)"
       },
-      /* background: theme.palette.secondary.main, */
-      background: theme.palette.background.paper,
+      background: theme.palette.secondary.main,
       display: "block",
       height: 80,
       position: "relative"
@@ -159,8 +156,7 @@ const useStyles = makeStyles(
       "& path": {
         fill: theme.palette.common.white
       },
-      /* background: theme.palette.primary.main */
-      background: theme.palette.background.paper
+      background: theme.palette.primary.main
     },
     logoSmall: {
       "& svg": {
@@ -393,14 +389,8 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
                     [classes.logoDark]: isDark
                   })}
                 >
-                  {/*
                   <SVG
                     src={isMenuSmall ? saleorDarkLogoSmall : saleorDarkLogo}
-                  />
-                  */}
-                  <img
-                  	src={isMenuSmall ? saleorDarkLogoSmall : saleorDarkLogo}
-                  	alt="Logo"
                   />
                 </div>
                 <Hidden smDown>

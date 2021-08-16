@@ -25,6 +25,7 @@ export interface ProductVariantUpdateFormData extends MetadataFormData {
   sku: string;
   trackInventory: boolean;
   weight: string;
+  wholeSalePrice: string;
 }
 export interface ProductVariantUpdateData extends ProductVariantUpdateFormData {
   attributes: FormsetData<VariantAttributeInputData, string>;
@@ -78,7 +79,8 @@ function useProductVariantUpdateForm(
     privateMetadata: variant?.privateMetadata?.map(mapMetadataItemToInput),
     sku: variant?.sku || "",
     trackInventory: variant?.trackInventory,
-    weight: variant?.weight?.value.toString() || ""
+    weight: variant?.weight?.value.toString() || "",
+    wholeSalePrice: variant?.wholeSalePrice?.amount.toString() || ""
   };
 
   const form = useForm(initial);

@@ -74,6 +74,12 @@ export interface VariantUpdate_productVariantUpdate_productVariant_price {
   currency: string;
 }
 
+export interface VariantUpdate_productVariantUpdate_productVariant_wholeSalePrice{
+  __typename: "Money";
+  amount: number;
+  currency: string;
+}
+
 export interface VariantUpdate_productVariantUpdate_productVariant_product_defaultVariant {
   __typename: "ProductVariant";
   id: string;
@@ -146,6 +152,7 @@ export interface VariantUpdate_productVariantUpdate_productVariant {
   images: (VariantUpdate_productVariantUpdate_productVariant_images | null)[] | null;
   name: string;
   price: VariantUpdate_productVariantUpdate_productVariant_price | null;
+  wholeSaleprice: VariantUpdate_productVariantUpdate_productVariant_wholeSaleprice | null;  
   product: VariantUpdate_productVariantUpdate_productVariant_product;
   sku: string;
   stocks: (VariantUpdate_productVariantUpdate_productVariant_stocks | null)[] | null;
@@ -389,6 +396,7 @@ export interface VariantUpdateVariables {
   attributes?: (AttributeValueInput | null)[] | null;
   costPrice?: any | null;
   price?: any | null;
+  wholeSalePrice?: any | null;
   sku?: string | null;
   trackInventory: boolean;
   stocks: StockInput[];
