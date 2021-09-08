@@ -88,6 +88,7 @@ export const CustomerDetailsView: React.FC<CustomerDetailsViewProps> = ({
                         email: data.email,
                         firstName: data.firstName,
                         isActive: data.isActive,
+                        isWholesaler: data.isWholesaler,
                         lastName: data.lastName,
                         note: data.note
                       }

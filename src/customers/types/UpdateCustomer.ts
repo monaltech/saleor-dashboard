@@ -70,6 +70,7 @@ export interface UpdateCustomer_customerUpdate_user {
   defaultBillingAddress: UpdateCustomer_customerUpdate_user_defaultBillingAddress | null;
   note: string | null;
   isActive: boolean;
+  isWholesaler: boolean;
 }
 
 export interface UpdateCustomer_customerUpdate {

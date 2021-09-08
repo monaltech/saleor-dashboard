@@ -110,6 +110,7 @@ export interface CustomerDetails_user {
   defaultBillingAddress: CustomerDetails_user_defaultBillingAddress | null;
   note: string | null;
   isActive: boolean;
+  isWholesaler: boolean;
   orders: CustomerDetails_user_orders | null;
   lastPlacedOrder: CustomerDetails_user_lastPlacedOrder | null;
 }

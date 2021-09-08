@@ -25,6 +25,7 @@ export interface CustomerDetailsPageFormData {
   lastName: string;
   email: string;
   isActive: boolean;
+  isWholesaler: boolean;
   note: string;
 }
 
@@ -61,6 +62,7 @@ const CustomerDetailsPage: React.FC<CustomerDetailsPageProps> = ({
         email: maybe(() => customer.email, ""),
         firstName: maybe(() => customer.firstName, ""),
         isActive: maybe(() => customer.isActive, false),
+        isWholesaler: maybe(() => customer.isWholesaler, false),
         lastName: maybe(() => customer.lastName, ""),
         note: maybe(() => customer.note, "")
       }}

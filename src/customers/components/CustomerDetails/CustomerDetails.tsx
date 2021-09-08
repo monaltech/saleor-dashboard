@@ -38,6 +38,7 @@ export interface CustomerDetailsProps {
   customer: CustomerDetails_user;
   data: {
     isActive: boolean;
+    isWholesaler: boolean;
     note: string;
   };
   disabled: boolean;
@@ -90,6 +91,17 @@ const CustomerDetails: React.FC<CustomerDetailsProps> = props => {
             description: "check to mark this account as active"
           })}
           name="isActive"
+          onChange={onChange}
+        />
+	      <ControlledCheckbox
+          checked={data.isWholesaler}
+          className={classes.checkbox}
+          disabled={disabled}
+          label={intl.formatMessage({
+            defaultMessage: "Whole Sale user",
+            description: "check to mark this user as wholesale user"
+          })}
+          name="isWholesaler"
           onChange={onChange}
         />
         <TextField
