@@ -31,6 +31,7 @@ import { ProductStockInput } from "../ProductStocks";
 export interface ProductUpdateFormData extends MetadataFormData {
   availableForPurchase: string;
   basePrice: number;
+  wholeSalePrice: number;
   category: string | null;
   changeTaxCode: boolean;
   chargeTaxes: boolean;

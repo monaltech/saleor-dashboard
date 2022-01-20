@@ -1364,6 +1364,7 @@ export interface ProductCreateInput {
   sku?: string | null;
   trackInventory?: boolean | null;
   basePrice?: any | null;
+  wholeSalePrice?: any | null;
   visibleInListings?: boolean | null;
   productType: string;
   stocks?: StockInput[] | null;
@@ -1402,6 +1403,7 @@ export interface ProductInput {
   sku?: string | null;
   trackInventory?: boolean | null;
   basePrice?: any | null;
+  wholeSalePrice?: any | null;
   visibleInListings?: boolean | null;
 }
 

@@ -30,6 +30,7 @@ import { ProductStockInput } from "../ProductStocks";
 export interface ProductCreateFormData extends MetadataFormData {
   availableForPurchase: string;
   basePrice: number;
+  wholeSalePrice: number;
   category: string;
   changeTaxCode: boolean;
   chargeTaxes: boolean;
@@ -102,6 +103,7 @@ const defaultInitialFormData: ProductCreateFormData &
   Record<"productType", string> = {
   availableForPurchase: "",
   basePrice: 0,
+  wholeSalePrice: 0,
   category: "",
   changeTaxCode: false,
   chargeTaxes: false,

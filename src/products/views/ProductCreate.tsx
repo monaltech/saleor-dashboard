@@ -99,6 +99,7 @@ export const ProductCreateView: React.FC = () => {
             values: attribute.value
           })),
           basePrice: decimal(formData.basePrice),
+          wholeSalePrice: decimal(formData.wholeSalePrice),
           category: formData.category,
           chargeTaxes: formData.chargeTaxes,
           collections: formData.collections,

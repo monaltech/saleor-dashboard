@@ -24,6 +24,7 @@ interface ProductPricingProps {
   currency?: string;
   data: {
     basePrice: number;
+    wholeSalePrice: number;
   };
   disabled: boolean;
   errors: ProductErrorFragment[];
@@ -36,7 +37,7 @@ const ProductPricing: React.FC<ProductPricingProps> = props => {
   const classes = useStyles(props);
   const intl = useIntl();
 
-  const formErrors = getFormErrors(["basePrice"], errors);
+  const formErrors = getFormErrors(["basePrice", "wholeSalePrice"], errors);
 
   const handlePriceChange = createNonNegativeValueChangeHandler(onChange);
 
@@ -60,6 +61,19 @@ const ProductPricing: React.FC<ProductPricingProps> = props => {
             hint={getProductErrorMessage(formErrors.basePrice, intl)}
             name="basePrice"
             value={data.basePrice}
+            currencySymbol={currency}
+            onChange={handlePriceChange}
+          />
+          <PriceField
+            disabled={disabled}
+            label={intl.formatMessage({
+              defaultMessage: "WholeSale Price",
+              description: "wholesale price"
+            })}
+            error={!!formErrors.wholeSalePrice}
+            hint={getProductErrorMessage(formErrors.wholeSalePrice, intl)}
+            name="wholeSalePrice"
+            value={data.wholeSalePrice}
             currencySymbol={currency}
             onChange={handlePriceChange}
           />

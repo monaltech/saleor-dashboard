@@ -169,6 +169,9 @@ export const productFragmentDetails = gql`
       price {
         ...Money
       }
+      wholeSalePrice{
+        ...Money
+      }
       margin
       stocks {
         ...StockFragment

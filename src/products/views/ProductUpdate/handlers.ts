@@ -48,6 +48,7 @@ export function createUpdateHandler(
           values: attribute.value[0] === "" ? [] : attribute.value
         })),
         basePrice: decimal(data.basePrice),
+        wholeSalePrice: decimal(data.wholeSalePrice),
         category: data.category,
         chargeTaxes: data.chargeTaxes,
         collections: data.collections,

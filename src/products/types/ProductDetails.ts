@@ -167,6 +167,12 @@ export interface ProductDetails_product_variants_price {
   currency: string;
 }
 
+export interface ProductDetails_product_variants_whole_sale_price {
+  __typename: "Money";
+  amount: number;
+  currency: string;
+}
+
 export interface ProductDetails_product_variants_stocks_warehouse {
   __typename: "Warehouse";
   id: string;
@@ -187,6 +193,7 @@ export interface ProductDetails_product_variants {
   sku: string;
   name: string;
   price: ProductDetails_product_variants_price | null;
+  wholeSalePrice: ProductDetails_product_variants_whole_sale_price | null;
   margin: number | null;
   stocks: (ProductDetails_product_variants_stocks | null)[] | null;
   trackInventory: boolean;

@@ -140,6 +140,7 @@ storiesOf("Views / Products / Product edit", module)
       errors={([
         "attributes",
         "basePrice",
+        "wholeSalePrice",
         "category",
         "chargeTaxes",
         "collections",
